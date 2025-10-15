@@ -1,0 +1,46 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting" : 350210,
+    "northing" : 5896709,
+    "zone" : "int(54,55)"
+  },
+  "species": "enum(Red gum, Black box, Grey box, Yellow box, Stringybark, Mallee, Box, Casuarina, Cypress pine, Swamp gum, Other gum, Uncertain, Other)",
+  "other-species": "Banksia",
+  "condition": "enum(Good health, Poor health - dying, Natural deterioration evident, Dead - standing, Fallen, Destroyed, Removed)",
+  "scars": {
+    "number": "3",
+    "toe-hold-count": "int(1,5)",
+    "descriptions": [
+      "repeat(3)",
+      {
+        "geometry": {
+          "length": "double(0, 0.5, 2)",
+          "width": "double(0, 0.2, 2)",
+          "height-above-ground": "double(0, 1, 2)"
+        },
+        "overgrowth": {
+          "top": "int(0,30)",
+          "middle-left": "int(0,30)",
+          "middle-right": "int(0,30)",
+          "bottom": "int(0,30)"
+        },
+        "orientation": "int(0,90)",
+        "origin": "enum(Highly Likely Aboriginal, Definitely Aboriginal)",
+        "type": "enum(Bark removed, Heart-wood removed, Resource extraction, Carved tree, Other)",
+        "type-other" : "Other type",
+        "preservation": "enum(Excellent, Good, Fair, Poor, Very poor, Destroyed)",
+        "axe-mark": {
+          "count": "int(0,4)",
+          "method": "enum(Stone, Steel, Unidenified origin)",
+          "type": "enum(Parallel - linear, Parallel - curved, Linear - singular, Criss-cross, Random)"
+        },
+        "stem-regrowth-present": "enum(Y, N)"
+      }
+    ]
+  },
+  "sketches": {}
+}

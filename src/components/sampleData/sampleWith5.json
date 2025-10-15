@@ -1,0 +1,141 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "55"
+  },
+  "species": "Black box",
+  "other-species": "Banksia",
+  "condition": "Natural deterioration evident",
+  "scars": {
+    "number": "5",
+    "toe-hold-count": "1",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.44",
+          "width": "0.05",
+          "height-above-ground": "0.62"
+        },
+        "overgrowth": {
+          "top": "7",
+          "middle-left": "24",
+          "middle-right": "2",
+          "bottom": "28"
+        },
+        "orientation": "67",
+        "origin": "Definitely Aboriginal",
+        "type": "Heart-wood removed",
+        "type-other": "Other type",
+        "preservation": "Very poor",
+        "axe-mark": {
+          "count": "2",
+          "method": "Stone",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.42",
+          "width": "0.14",
+          "height-above-ground": "0"
+        },
+        "overgrowth": {
+          "top": "11",
+          "middle-left": "23",
+          "middle-right": "30",
+          "bottom": "17"
+        },
+        "orientation": "61",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "3",
+          "method": "Stone",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "N"
+      },
+      {
+        "geometry": {
+          "length": "0.04",
+          "width": "0.2",
+          "height-above-ground": "0.91"
+        },
+        "overgrowth": {
+          "top": "10",
+          "middle-left": "2",
+          "middle-right": "9",
+          "bottom": "16"
+        },
+        "orientation": "46",
+        "origin": "Definitely Aboriginal",
+        "type": "Carved tree",
+        "type-other": "Other type",
+        "preservation": "Good",
+        "axe-mark": {
+          "count": "2",
+          "method": "Steel",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.33",
+          "width": "0.2",
+          "height-above-ground": "0.17"
+        },
+        "overgrowth": {
+          "top": "17",
+          "middle-left": "18",
+          "middle-right": "4",
+          "bottom": "8"
+        },
+        "orientation": "25",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Carved tree",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "0",
+          "method": "Unidenified origin",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.09",
+          "width": "0.19",
+          "height-above-ground": "0.18"
+        },
+        "overgrowth": {
+          "top": "8",
+          "middle-left": "29",
+          "middle-right": "22",
+          "bottom": "2"
+        },
+        "orientation": "50",
+        "origin": "Definitely Aboriginal",
+        "type": "Other",
+        "type-other": "Other type",
+        "preservation": "Poor",
+        "axe-mark": {
+          "count": "4",
+          "method": "Stone",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "Y"
+      }
+    ]
+  },
+  "sketches": {}
+}

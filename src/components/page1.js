@@ -1,5 +1,3 @@
-import { drawText, rgb } from "pdf-lib";
-
 export default function fillPage1(page, font, siteData) {
   const { width, height } = page.getSize();
   page.drawText(siteData["heritage-register"].name, {
@@ -7,7 +5,6 @@ export default function fillPage1(page, font, siteData) {
     y: height - 75 + 10,
     size: 10,
     font: font,
-    color: rgb(0, 0, 0),
     maxWidth: 120,
     lineHeight: 10,
   });
@@ -98,7 +95,7 @@ export default function fillPage1(page, font, siteData) {
       tickBoxAt(page, speciesX + tickWidthOffsetSpecies * 5, speciesY);
       break;
 
-    case "Box (non-specific)":
+    case "Box":
       tickBoxAt(page, speciesX + tickWidthOffsetSpecies * 6 - 20.8, speciesY);
       break;
 
@@ -172,7 +169,7 @@ export default function fillPage1(page, font, siteData) {
       tickBoxAt(page, conditionX, conditionY);
       break;
 
-    case "Poor health (dying)":
+    case "Poor health - dying":
       tickBoxAt(page, conditionX, conditionY - tickHeightOffset);
       break;
 
@@ -180,7 +177,7 @@ export default function fillPage1(page, font, siteData) {
       tickBoxAt(page, conditionX, conditionY - tickHeightOffset * 2);
       break;
 
-    case "Dead (standing)":
+    case "Dead - standing":
       tickBoxAt(page, conditionX + tickWidthOffsetCondition, conditionY);
       break;
 
@@ -222,7 +219,239 @@ export default function fillPage1(page, font, siteData) {
     y: height - 205,
     size: 10,
   });
+
+  fillScarDescriptions(page, siteData);
 }
+
+//#region Descriptions
+function fillScarDescriptions(page, siteData) {
+  const { width, height } = page.getSize();
+  const initialX = 172;
+  const initialY = height - 267;
+  const scarOffsetXInitial = 83;
+  const scarOffsetX = 94.5;
+  const verticalOffset = 10;
+  const textSize = 9;
+
+  for (let i = 0; i < siteData.scars.number; i++) {
+    let currentY = initialY;
+    const scar = siteData.scars.descriptions[i];
+    let siteX = initialX;
+    let regrowthOffsetYes = 19;
+    let regrowthOffsetNo = 19;
+    if (i > 0) {
+      siteX += scarOffsetXInitial + scarOffsetX * (i - 1);
+      switch (i) {
+        case 1:
+          siteX += 1;
+          regrowthOffsetYes += 3.8;
+          regrowthOffsetNo += 5.5;
+          break;
+        case 2:
+          siteX -= 2;
+          regrowthOffsetYes += 0.8;
+          regrowthOffsetNo += 8.5;
+          break;
+        case 3:
+          siteX += 1;
+          regrowthOffsetYes += 3.8;
+          regrowthOffsetNo += 5;
+          break;
+        case 4:
+          siteX -= 0.5;
+          regrowthOffsetYes += 2.7;
+          regrowthOffsetNo += 6.5;
+          break;
+      }
+    }
+
+    // geometry
+    page.drawText(scar.geometry.length.toString(), {
+      x: siteX,
+      y: initialY,
+      size: textSize,
+    });
+
+    page.drawText(scar.geometry.width.toString(), {
+      x: siteX,
+      y: initialY - verticalOffset,
+      size: textSize,
+    });
+
+    page.drawText(scar.geometry["height-above-ground"].toString(), {
+      x: siteX,
+      y: initialY - verticalOffset * 2,
+      size: textSize,
+    });
+
+    currentY -= 50;
+
+    // overgrowth
+    page.drawText(scar.overgrowth.top.toString(), {
+      x: siteX,
+      y: currentY,
+      size: textSize
+    });
+
+    page.drawText(scar.overgrowth["middle-left"].toString(), {
+      x: siteX,
+      y: currentY - verticalOffset,
+      size: textSize
+    });
+
+    page.drawText(scar.overgrowth["middle-right"].toString(), {
+      x: siteX,
+      y: currentY - verticalOffset * 2,
+      size: textSize
+    });
+
+    page.drawText(scar.overgrowth.bottom.toString(), {
+      x: siteX,
+      y: currentY - verticalOffset * 3,
+      size: textSize
+    });
+
+    //orientation
+    currentY -= 55
+
+    page.drawText(scar.orientation.toString(), {
+      x: siteX,
+      y: currentY,
+      size: textSize
+    });
+
+    //origin
+    currentY -= 28.5;
+    switch (scar.origin) {
+      case "Highly Likely Aboriginal":
+        markBoxAt(page, siteX, currentY);
+        break;
+      case "Definitely Aboriginal":
+        markBoxAt(page, siteX, currentY - verticalOffset);
+        break;
+      default:
+        console.warn("Defined 'scar" + i + ".origin' is invalid.");
+        break;
+    }
+
+    //type
+    currentY -= 42;
+    switch (scar.type) {
+      case "Bark removed":
+        markBoxAt(page, siteX, currentY);
+        break;
+      case "Heart-wood removed":
+        markBoxAt(page, siteX, currentY - verticalOffset);
+        break;
+      case "Resource extraction":
+        markBoxAt(page, siteX, currentY - verticalOffset * 1);
+        break;
+      case "Carved tree":
+        markBoxAt(page, siteX, currentY - verticalOffset * 2);
+        break;
+      case "Other":
+        markBoxAt(page, siteX, currentY - verticalOffset * 3);
+        page.drawText(scar["type-other"], {
+          x: siteX - 20,
+          y: currentY - verticalOffset * 4 + 1,
+          size: 8,
+        });
+        break;
+      default:
+        console.warn("Defined 'scar" + i + ".type' is invalid.");
+        break;
+    }
+
+    //type
+    currentY -= 71;
+    switch (scar.preservation) {
+      case "Excellent":
+        markBoxAt(page, siteX, currentY);
+        break;
+      case "Good":
+        markBoxAt(page, siteX, currentY - verticalOffset);
+        break;
+      case "Fair":
+        markBoxAt(page, siteX, currentY - verticalOffset * 1);
+        break;
+      case "Poor":
+        markBoxAt(page, siteX, currentY - verticalOffset * 2);
+        break;
+      case "Very poor":
+        markBoxAt(page, siteX, currentY - verticalOffset * 3);
+        break;
+      case "Destroyed":
+        markBoxAt(page, siteX, currentY - verticalOffset * 4);
+        break;
+      default:
+        console.warn("Defined 'scar" + i + ".preservation' is invalid.");
+        break;
+    }
+
+    // axe-marks
+    currentY -= 69;
+    const mark = scar["axe-mark"];
+
+    page.drawText(mark.count, {
+      x: siteX,
+      y: currentY,
+      size: 8
+    });
+
+    currentY -= 24
+    switch (mark.method) {
+      case "Stone":
+        markBoxAt(page, siteX, currentY);
+        break;
+      case "Steel":
+        markBoxAt(page, siteX, currentY - verticalOffset);
+        break;
+      case "Unidenified origin":
+        markBoxAt(page, siteX, currentY - verticalOffset * 2);
+        break;
+      default:
+        console.warn("Defined 'scar" + i + ".axe-mark.method' is invalid.");
+        break;
+    }
+
+    currentY -= 51.2
+    switch (mark.type) {
+      case "Parallel - linear":
+        markBoxAt(page, siteX, currentY);
+        break;
+      case "Parallel - curved":
+        markBoxAt(page, siteX, currentY - verticalOffset);
+        break;
+      case "Linear - singular":
+        markBoxAt(page, siteX, currentY - verticalOffset * 2);
+        break;
+      case "Criss-cross":
+        markBoxAt(page, siteX, currentY - verticalOffset * 3);
+        break;
+      case "Random":
+        markBoxAt(page, siteX, currentY - verticalOffset * 4);
+        break;
+      default:
+        console.warn("Defined 'scar" + i + ".axe-mark.type' is invalid.");
+        break;
+    }
+
+    // stem regrowth
+    currentY -= 69.2;
+    switch (scar["stem-regrowth-present"]) {
+      case "Y":
+        tickBoxAt(page, siteX - regrowthOffsetYes, currentY);
+        break;
+      case "N":
+        tickBoxAt(page, siteX + regrowthOffsetNo, currentY);
+        break;
+      default:
+        console.warn("Defined 'scar" + i + ".axe-mark.type' is invalid.");
+        break;
+    }
+  }
+}
+//#endregion
 
 function tickBoxAt(page, x, y) {
   page.drawSquare({
@@ -230,4 +459,18 @@ function tickBoxAt(page, x, y) {
     y: y,
     size: 4,
   });
+}
+
+function markBoxAt(page, x, y) {
+  page.drawText("X", {
+    x: x,
+    y: y,
+    size: 10,
+  });
+
+  // page.drawSquare({
+  //   x: x,
+  //   y: y,
+  //   size: 8,
+  // });
 }

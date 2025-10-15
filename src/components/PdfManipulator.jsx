@@ -2,7 +2,7 @@ import { PDFDocument, StandardFonts } from "pdf-lib";
 import React from "react";
 import * as pdfjsLib from "pdfjs-lib";
 import "./pdfManipulator.css";
-import sampleSiteData from "./sampleSiteData.json";
+import sampleSiteData from "./sampleData/sampleWith5.json";
 import fillPage1 from "./page1";
 
 const siteData = sampleSiteData;
