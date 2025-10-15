@@ -1,4 +1,4 @@
-export default async function fillPage2(doc, page, siteData) {
+export default async function fillPage2(doc, page, siteData, drawImage) {
 	const { width, height } = page.getSize();
 
 	const initialY = height - 77;
@@ -74,22 +74,4 @@ export default async function fillPage2(doc, page, siteData) {
 	await drawImage(doc, page, scarDrawing3Url, width / 2, initialY - verticalOffset * 3 + scarsImageOffset, 270, 124.5);
 	await drawImage(doc, page, scarDrawing4Url, width / 2, initialY - verticalOffset * 4 + scarsImageOffset, 270, 124.5);
 	//#endregion
-}
-
-async function drawImage(doc, page, path, x, y, maxWidth, maxHeight) {
-	try {
-		const imageBytes = await fetch(path).then(res => res.arrayBuffer());
-		const image = await doc.embedPng(imageBytes);
-		const { width, height } = image.scaleToFit(maxWidth, maxHeight);
-		const centeredX = x + (maxWidth - width) / 2;
-		const centeredY = y + (maxHeight - height) / 2;
-		page.drawImage(image, {
-			x: centeredX,
-			y: centeredY,
-			width,
-			height,
-		});
-	} catch (error) {
-		console.error("Error loading image:", error);
-	}
 }

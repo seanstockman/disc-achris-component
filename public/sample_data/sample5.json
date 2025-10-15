@@ -1,0 +1,78 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "55"
+  },
+  "species": "Other",
+  "other-species": "Banksia",
+  "condition": "Poor health - dying",
+  "scars": {
+    "number": "2",
+    "toe-hold-count": "2",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.44",
+          "width": "0.04",
+          "height-above-ground": "0.83"
+        },
+        "overgrowth": {
+          "top": "13",
+          "middle-left": "28",
+          "middle-right": "24",
+          "bottom": "12"
+        },
+        "orientation": "42",
+        "origin": "Definitely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "4",
+          "method": "Stone",
+          "type": "Parallel - linear"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.45",
+          "width": "0.13",
+          "height-above-ground": "0.69"
+        },
+        "overgrowth": {
+          "top": "11",
+          "middle-left": "30",
+          "middle-right": "29",
+          "bottom": "11"
+        },
+        "orientation": "25",
+        "origin": "Definitely Aboriginal",
+        "type": "Heart-wood removed",
+        "type-other": "Other type",
+        "preservation": "Destroyed",
+        "axe-mark": {
+          "count": "3",
+          "method": "Steel",
+          "type": "Random"
+        },
+        "stem-regrowth-present": "Y"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "48",
+    "view-angle-2": "35",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "3.9",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}

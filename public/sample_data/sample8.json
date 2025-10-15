@@ -1,0 +1,54 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "54"
+  },
+  "species": "Casuarina",
+  "other-species": "Banksia",
+  "condition": "Fallen",
+  "scars": {
+    "number": "1",
+    "toe-hold-count": "2",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.27",
+          "width": "0.16",
+          "height-above-ground": "0.52"
+        },
+        "overgrowth": {
+          "top": "5",
+          "middle-left": "1",
+          "middle-right": "5",
+          "bottom": "23"
+        },
+        "orientation": "10",
+        "origin": "Definitely Aboriginal",
+        "type": "Heart-wood removed",
+        "type-other": "Other type",
+        "preservation": "Very poor",
+        "axe-mark": {
+          "count": "4",
+          "method": "Stone",
+          "type": "Random"
+        },
+        "stem-regrowth-present": "N"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "250",
+    "view-angle-2": "31",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "3.5",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}

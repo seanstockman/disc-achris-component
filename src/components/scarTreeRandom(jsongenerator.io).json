@@ -4,9 +4,9 @@
     "number": 30004191
   },
   "coordinates": {
-    "easting" : 350210,
-    "northing" : 5896709,
-    "zone" : "int(54,55)"
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "int(54,55)"
   },
   "species": "enum(Red gum, Black box, Grey box, Yellow box, Stringybark, Mallee, Box, Casuarina, Cypress pine, Swamp gum, Other gum, Uncertain, Other)",
   "other-species": "Banksia",
@@ -31,7 +31,7 @@
         "orientation": "int(0,90)",
         "origin": "enum(Highly Likely Aboriginal, Definitely Aboriginal)",
         "type": "enum(Bark removed, Heart-wood removed, Resource extraction, Carved tree, Other)",
-        "type-other" : "Other type",
+        "type-other": "Other type",
         "preservation": "enum(Excellent, Good, Fair, Poor, Very poor, Destroyed)",
         "axe-mark": {
           "count": "int(0,4)",
@@ -45,6 +45,11 @@
   "sketches": {
     "view-angle-1": "int(0,360)",
     "view-angle-2": "int(0,360)",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "double(1,5,1)",
     "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
   }
 }
