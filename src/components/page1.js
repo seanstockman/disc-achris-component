@@ -220,7 +220,7 @@ export default async function fillPage1(page, siteData) {
 
 //#region Descriptions
 function fillScarDescriptions(page, siteData) {
-  const { width, height } = page.getSize();
+  const { height } = page.getSize();
   const initialX = 172;
   const initialY = height - 267;
   const scarOffsetXInitial = 83;
@@ -256,6 +256,9 @@ function fillScarDescriptions(page, siteData) {
           siteX -= 0.5;
           regrowthOffsetYes += 2.7;
           regrowthOffsetNo += 6.5;
+          break;
+        default:
+          console.warn("Scar count > 5.");
           break;
       }
     }

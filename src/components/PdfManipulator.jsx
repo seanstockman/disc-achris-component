@@ -1,5 +1,5 @@
 import { PDFDocument, StandardFonts } from "pdf-lib";
-import React, { useEffect } from "react";
+import React from "react";
 import * as pdfjsLib from "pdfjs-lib";
 import "./pdfManipulator.css";
 // import sampleSiteData from "./sampleData/sample1.json";
