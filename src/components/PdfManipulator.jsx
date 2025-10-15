@@ -81,6 +81,8 @@ export default function ManipulatePDF() {
 
   function handleSubmit(e) {
     setLoading(true);
+    setDownloadUrl('');
+    document.getElementById("pdf-container").innerHTML = '';
     e.preventDefault();
     fillFormForSite(siteId);
   }
