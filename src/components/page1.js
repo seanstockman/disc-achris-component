@@ -1,10 +1,9 @@
-export default function fillPage1(page, font, siteData) {
+export default async function fillPage1(page, siteData) {
   const { width, height } = page.getSize();
   page.drawText(siteData["heritage-register"].name, {
     x: 170,
     y: height - 75 + 10,
     size: 10,
-    font: font,
     maxWidth: 120,
     lineHeight: 10,
   });
@@ -22,7 +21,6 @@ export default function fillPage1(page, font, siteData) {
     page.drawText(char, {
       x: currentX,
       y: height - 72.5,
-      font,
       size: fontSize,
     });
   }
@@ -37,7 +35,6 @@ export default function fillPage1(page, font, siteData) {
     page.drawText(char, {
       x: currentX,
       y: coordinatesHeight,
-      font,
       size: fontSize,
     });
   }
@@ -49,7 +46,6 @@ export default function fillPage1(page, font, siteData) {
     page.drawText(char, {
       x: currentX,
       y: coordinatesHeight,
-      font,
       size: fontSize,
     });
   }
@@ -144,7 +140,6 @@ export default function fillPage1(page, font, siteData) {
       page.drawText(siteData["other-species"], {
         x: speciesX + tickWidthOffsetSpecies * 5 + 40,
         y: speciesY - tickHeightOffset - 2,
-        font,
         size: 10,
         maxWidth: 130,
         lineHeight: 10,

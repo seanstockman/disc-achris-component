@@ -12,10 +12,10 @@
   "other-species": "Banksia",
   "condition": "enum(Good health, Poor health - dying, Natural deterioration evident, Dead - standing, Fallen, Destroyed, Removed)",
   "scars": {
-    "number": "3",
+    "number": "5",
     "toe-hold-count": "int(1,5)",
     "descriptions": [
-      "repeat(3)",
+      "repeat(5)",
       {
         "geometry": {
           "length": "double(0, 0.5, 2)",
@@ -42,5 +42,9 @@
       }
     ]
   },
-  "sketches": {}
+  "sketches": {
+    "view-angle-1": "int(0,360)",
+    "view-angle-2": "int(0,360)",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
 }
