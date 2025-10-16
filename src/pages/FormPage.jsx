@@ -109,8 +109,9 @@ export default function FormPage() {
 
   return (
     <div className="main">
+      <br/>
       <button onClick={() => setPopupVisible(true)} id="about-button-form">
-        About
+        About / How to use
       </button>
       <form onSubmit={handleSubmit}>
         <p>Enter the site ID:</p>

@@ -17,13 +17,17 @@
 }
 
 #about-button-form {
+    padding: 8px;
     position: absolute;
     left:1vw;
     top:7vh;
+    border-radius: 8px;
+    border-width: 1px;
+    background-color: rgb(253, 255, 204);
+    transition-duration: 0.5s;
 }
 
-#about-button-form {
-    position: absolute;
-    left:1vw;
-    top:7vh;
+#about-button-form:hover {
+    cursor: pointer;
+    background-color: rgb(255, 222, 89);
 }
