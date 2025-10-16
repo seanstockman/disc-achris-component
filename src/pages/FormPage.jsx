@@ -1,20 +1,23 @@
 import { PDFDocument, StandardFonts } from "pdf-lib";
-import React from "react";
+import React, { useEffect } from "react";
 import * as pdfjsLib from "pdfjs-lib";
-import "./pdfManipulator.css";
+import "./FormPage.css";
 // import sampleSiteData from "./sampleData/sample1.json";
-import fillPage1 from "./page1";
-import fillPage2 from "./page2";
-import fillPage3 from "./page3";
+import fillPage1 from "../components/form-fill/page1";
+import fillPage2 from "../components/form-fill/page2";
+import fillPage3 from "../components/form-fill/page3";
 
 
-// const siteData = sampleSiteData;
-
+const pageTitle = "VAHR Form Filler";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
 const existingPdfFilePath = "/ACHRIS Scarred-Tree-VAHR-Form.pdf";
 
-export default function ManipulatePDF() {
+export default function FormPage() {
+  useEffect(() => {
+    document.title = pageTitle;
+  });
+
   const [downloadUrl, setDownloadUrl] = React.useState(null);
 
   async function fetchRandomSiteData() {
@@ -120,11 +123,11 @@ async function drawImage(doc, page, path, x, y, maxWidth, maxHeight) {
     const imageBytes = await fetch(path).then(res => res.arrayBuffer());
     const image = await doc.embedPng(imageBytes);
     const { width, height } = image.scaleToFit(maxWidth, maxHeight);
-    const centeredX = x + (maxWidth - width) / 2;
-    const centeredY = y + (maxHeight - height) / 2;
+    const centredX = x + (maxWidth - width) / 2;
+    const centredY = y + (maxHeight - height) / 2;
     page.drawImage(image, {
-      x: centeredX,
-      y: centeredY,
+      x: centredX,
+      y: centredY,
       width,
       height,
     });

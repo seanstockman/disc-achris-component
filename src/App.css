@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+nav {
+  display: flex;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: small;
+  justify-content: center;
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+}
+
+
+Link, Link:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
+Link:active {
+  text-decoration: underline;
+  color:inherit;
+}
+
+Link:hover {
+  text-decoration: underline;
+  color:purple;
+}
+
+
+
+/* nav > Link:hover {
+  color: purple;
+} */
