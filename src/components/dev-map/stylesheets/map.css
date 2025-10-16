@@ -1,13 +1,17 @@
+.page-container {
+  height: 95.5vh;
+}
+
 .map-wrap {
   position: relative;
   width: 100%;
-  height: calc(100vh - 3vh); /* calculate height of the screen minus the heading */
+  height: 100%; /* calculate height of the screen minus the heading */
 }
 
 .map {
   position: absolute;
   width: 100%;
-  /* height: calc(100vh - 3vh); */
+  height: 100%;
 }
 
 .maplibregl-ctrl-top-left {

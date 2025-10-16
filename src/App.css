@@ -48,23 +48,13 @@ nav {
 }
 
 
-Link, Link:focus {
+a, a:focus {
   text-decoration: none;
   color: inherit;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
-Link:active {
+a:hover {
   text-decoration: underline;
-  color:inherit;
 }
-
-Link:hover {
-  text-decoration: underline;
-  color:purple;
-}
-
-
-
-/* nav > Link:hover {
-  color: purple;
-} */

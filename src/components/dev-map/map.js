@@ -30,7 +30,10 @@ export default function Map() {
   const API_KEY = "syqHzD2CoOfLLm8sgqWe";
 
   useEffect(() => {
-    if (map.current) return; // stops map from initialising more than once
+    if (map.current) {
+      console.log("Map already loaded.");
+      return;
+    }
 
     const bounds = [
       [143.18052716189982, -37.809150075981044],
@@ -56,7 +59,7 @@ export default function Map() {
   }, [API_KEY, lng, lat, zoom]);
 
   return (
-    <div>
+    <div className="page-container">
       <div className="map-wrap">
         <div ref={mapContainer} className="map" />
       </div>
