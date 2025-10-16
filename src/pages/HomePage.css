@@ -1,0 +1,17 @@
+.home {
+  display: flex;
+  flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+h1 {
+}
+
+.gap-left {
+	width: calc(13% - 5%);
+}
+
+.gap-right {
+	width: calc(13% + 5%);
+}

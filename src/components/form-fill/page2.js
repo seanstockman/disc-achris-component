@@ -63,15 +63,24 @@ export default async function fillPage2(doc, page, siteData, drawImage) {
 	const scarDrawing3Url = "/sketches/scar_drawing_3.png";
 	const scarDrawing4Url = "/sketches/scar_drawing_4.png";
 
+	const scarDrawingUrlPrefix = "/sketches/scar_drawing_";
+	const scarDrawingUrlSuffix = ".png";
+
 	// tree
 	await drawImage(doc, page, treeNorthUrl, 28, 420, 270, 288);
 	await drawImage(doc, page, treeSouthUrl, 28, 97, 270, 288);
 
 	// scars
 	const scarsImageOffset = 30;
-	await drawImage(doc, page, scarDrawing1Url, width / 2, initialY - verticalOffset + scarsImageOffset, 270, 124.5);
-	await drawImage(doc, page, scarDrawing2Url, width / 2, initialY - verticalOffset * 2 + scarsImageOffset, 270, 124.5);
-	await drawImage(doc, page, scarDrawing3Url, width / 2, initialY - verticalOffset * 3 + scarsImageOffset, 270, 124.5);
-	await drawImage(doc, page, scarDrawing4Url, width / 2, initialY - verticalOffset * 4 + scarsImageOffset, 270, 124.5);
+
+	for (let i = 0; i < siteData.scars.number && i < 4; i++) {
+		const url = scarDrawingUrlPrefix + Math.floor(Math.random() * 4 + 1) + scarDrawingUrlSuffix;
+		await drawImage(doc, page, url, width / 2, initialY - verticalOffset * (i + 1) + scarsImageOffset, 270, 124.5);
+	}
+
+	// await drawImage(doc, page, scarDrawing1Url, width / 2, initialY - verticalOffset + scarsImageOffset, 270, 124.5);
+	// await drawImage(doc, page, scarDrawing2Url, width / 2, initialY - verticalOffset * 2 + scarsImageOffset, 270, 124.5);
+	// await drawImage(doc, page, scarDrawing3Url, width / 2, initialY - verticalOffset * 3 + scarsImageOffset, 270, 124.5);
+	// await drawImage(doc, page, scarDrawing4Url, width / 2, initialY - verticalOffset * 4 + scarsImageOffset, 270, 124.5);
 	//#endregion
 }

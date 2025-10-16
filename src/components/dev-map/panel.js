@@ -61,7 +61,7 @@ export default function Panel({ onSubmit, setUpload }) {
       <div className="left-panel">
         <div className="panel-contents">
           <img
-            src="/dev-map/tlawc-logo.jpg"
+            src="/tlawc-logo.jpg"
             alt="Taungurung Land and Water Council Logo"
           ></img>
           <h3>Developer CHMP Trigger Map</h3>
