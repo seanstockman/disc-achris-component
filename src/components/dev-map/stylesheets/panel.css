@@ -21,6 +21,11 @@
   margin-right: 2%;
 }
 
+.panel-contents > p {
+  padding: 0;
+  margin: 8%;
+}
+
 .panel-contents > img {
   width: 95%;
   height: fit-content;
@@ -98,4 +103,12 @@
 
 .submit:hover {
   background-color: lightgrey;
+}
+
+#about-button {
+  background-color: rgb(253, 255, 204);
+}
+
+#about-button:hover {
+  background-color: rgb(255, 222, 89);
 }

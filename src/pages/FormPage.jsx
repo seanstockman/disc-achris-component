@@ -1,12 +1,25 @@
 import { PDFDocument, StandardFonts } from "pdf-lib";
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import * as pdfjsLib from "pdfjs-lib";
 import "./FormPage.css";
 // import sampleSiteData from "./sampleData/sample1.json";
 import fillPage1 from "../components/form-fill/page1";
 import fillPage2 from "../components/form-fill/page2";
 import fillPage3 from "../components/form-fill/page3";
+import Popup from "../components/popup";
 
+function AboutForm() {
+  return (
+    <p>
+      This app showcases the ability to automatically fill VAHR submission forms, using data from within the TLaWC Cultural Heritage Digital Infrastructure database. As this is a prototype, the app pulls from data which has been randomly generated in advance.
+      <br />
+      <h4>How to use</h4>
+      Press <strong>Submit Site ID</strong> to see how the app automatically completes a Scar Tree VAHR submission Form. There are 10 datasets it cycles through.
+      <h4>Rationale</h4>
+      The rationale for this component is to reduce the workload required for Taungurung Land and Water Council to complete VAHR submission forms and fulfil their obligations to ACHRIS, so they can better use those resources elsewhere.
+    </p>
+  );
+}
 
 const pageTitle = "VAHR Form Filler";
 
@@ -18,7 +31,8 @@ export default function FormPage() {
     document.title = pageTitle;
   });
 
-  const [downloadUrl, setDownloadUrl] = React.useState(null);
+  const [downloadUrl, setDownloadUrl] = useState(null);
+  const [popupVisible, setPopupVisible] = useState(false);
 
   async function fetchRandomSiteData() {
     const randomNumber = Math.floor(Math.random() * 10 + 1);
@@ -84,8 +98,8 @@ export default function FormPage() {
 
   function handleSubmit(e) {
     setLoading(true);
-    setDownloadUrl('');
-    document.getElementById("pdf-container").innerHTML = '';
+    setDownloadUrl("");
+    document.getElementById("pdf-container").innerHTML = "";
     e.preventDefault();
     fillFormForSite(siteId);
   }
@@ -95,6 +109,9 @@ export default function FormPage() {
 
   return (
     <div className="main">
+      <button onClick={() => setPopupVisible(true)} id="about-button-form">
+        About
+      </button>
       <form onSubmit={handleSubmit}>
         <p>Enter the site ID:</p>
         <input
@@ -105,7 +122,11 @@ export default function FormPage() {
         />
         <input type="submit" value="Submit Site ID" />
       </form>
-      {loading && <p><strong>Loading...</strong></p>}
+      {loading && (
+        <p>
+          <strong>Loading...</strong>
+        </p>
+      )}
       <p></p>
       {downloadUrl && (
         <a href={downloadUrl} download="filled-form.pdf">
@@ -114,13 +135,16 @@ export default function FormPage() {
       )}
       <p></p>
       <div id="pdf-container"></div>
+      {popupVisible && (
+        <Popup About={AboutForm} setPopupVisible={setPopupVisible} />
+      )}
     </div>
   );
 }
 
 async function drawImage(doc, page, path, x, y, maxWidth, maxHeight) {
   try {
-    const imageBytes = await fetch(path).then(res => res.arrayBuffer());
+    const imageBytes = await fetch(path).then((res) => res.arrayBuffer());
     const image = await doc.embedPng(imageBytes);
     const { width, height } = image.scaleToFit(maxWidth, maxHeight);
     const centredX = x + (maxWidth - width) / 2;

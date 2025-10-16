@@ -1,0 +1,61 @@
+.popup {
+  position: absolute;
+  left: calc(50% - 20vw);
+  bottom: calc(50% - 35vh);
+  width: 40vw;
+  height: 70vh;
+  background-color:moccasin;
+  border-radius: 10px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+.popup > h3 {
+    margin-top: 0;
+}
+
+.popup > h4 {
+    justify-content: center;
+    align-self: center;
+    text-align: center;
+    margin-top: 0;
+    padding-left: 50%;
+    padding-right: 50%;
+}
+
+.popup > p {
+    width: 80%;
+    padding: 0;
+}
+
+.popup > p > a {
+    text-decoration: underline;
+}
+
+.popup > p > a:hover {
+    color: blue;
+}
+
+.popup > button {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: rgb(249, 214, 214);
+  transition-duration: .5s;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.popup > button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 168, 168);
+}

@@ -1,7 +1,8 @@
+import { hover } from "@testing-library/user-event/dist/hover";
 import "./stylesheets/panel.css";
 import { union } from "@turf/turf";
 
-export default function Panel({ onSubmit, setUpload }) {
+export default function Panel({ onSubmit, setUpload, setPopupVisible }) {
   const onInput = async (e) => {
     const input = document.getElementById("area-input");
     const file = e.target.files[0];
@@ -17,7 +18,7 @@ export default function Panel({ onSubmit, setUpload }) {
       let geojson = JSON.parse(text);
 
       console.log("GeoJSON loaded:", geojson);
-      
+
       if (geojson.type === "FeatureCollection") {
         let merged = geojson.features[0];
 
@@ -25,7 +26,9 @@ export default function Panel({ onSubmit, setUpload }) {
           merged = union(merged, geojson.features[i]);
           if (!merged) {
             console.error("Failed to union polygons:", i);
-            alert("Failed to polygonise FeatureCollection. Please upload a Polygon or MultiPolygon Feature instead.");
+            alert(
+              "Failed to polygonise FeatureCollection. Please upload a Polygon or MultiPolygon Feature instead."
+            );
             return;
           }
         }
@@ -41,7 +44,9 @@ export default function Panel({ onSubmit, setUpload }) {
         geojson.geometry.type !== "Polygon" &&
         geojson.geometry.type !== "MultiPolygon"
       ) {
-        alert("GeoJSON must be a Feature or FeatureCollection of Polygons or MultiPolygons.");
+        alert(
+          "GeoJSON must be a Feature or FeatureCollection of Polygons or MultiPolygons."
+        );
         return;
       }
 
@@ -101,6 +106,13 @@ export default function Panel({ onSubmit, setUpload }) {
               Press <strong>SUBMIT</strong> to test your site area.
             </p>
           </div>
+          <button
+            className="file-input"
+            onClick={() => setPopupVisible(true)}
+            id = "about-button"
+          >
+            <strong>About</strong>
+          </button>
         </div>
       </div>
     </div>

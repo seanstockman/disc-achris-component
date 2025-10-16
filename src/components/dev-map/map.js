@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 
 import Panel from "./panel";
 import compare from "./comparer";
@@ -7,8 +7,38 @@ import { setBuffer } from "./comparer";
 import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./stylesheets/map.css";
-import { AddDrawMapbox } from "./mapcontrols";
+import { AddDrawMapbox } from "./mapControls";
 import { centroid } from "@turf/turf";
+import Popup from "../popup";
+
+function AboutMap() {
+  return (
+    <p>
+      This map mimics the ACHRIS public map accessible at{" "}
+      <a
+        href="https://achris.vic.gov.au/#/onlinemap"
+        target="_blank"
+        rel="noreferrer"
+      >
+        https://achris.vic.gov.au/#/onlinemap
+      </a>
+      .
+      <br />
+      <h4>How to use</h4>
+      Use the polygon tool at the top-left to draw a site boundary on the map.
+      Alternatively, you can upload a GeoJSON Polygon Feature to upload it onto
+      the map.
+      <br />
+      Then, press <strong>SUBMIT</strong> to compare the site area to check
+      Cultural Heritage Management Plan trigger boundaries.
+      <h4>Rationale</h4>
+      The rationale for this component is to separate the proposed TLaWC
+      Cultural Heritage Digital Infrastructure from the functionalities provided
+      by ACHRIS to further TLaWC's self responsibility and control over their
+      own data.
+    </p>
+  );
+}
 
 async function loadGeoJSON(filePath) {
   const response = await fetch(filePath);
@@ -22,6 +52,7 @@ let mapRef = null;
 let draw = null;
 
 export default function Map() {
+  const [popupVisible, setPopupVisible] = useState(false);
   const mapContainer = useRef(null);
   const map = useRef(null);
   const lng = 145.30695475536;
@@ -63,7 +94,14 @@ export default function Map() {
       <div className="map-wrap">
         <div ref={mapContainer} className="map" />
       </div>
-      <Panel onSubmit={() => compare(draw)} setUpload={SetUploaded} />
+      <Panel
+        onSubmit={() => compare(draw)}
+        setUpload={SetUploaded}
+        setPopupVisible={setPopupVisible}
+      />
+      {popupVisible && (
+        <Popup About={AboutMap} setPopupVisible={setPopupVisible} />
+      )}
     </div>
   );
 }
