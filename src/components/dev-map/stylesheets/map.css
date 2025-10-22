@@ -1,6 +1,9 @@
 .page-container {
   /* height: calc(100vh) */
-  height: 95.5vh;
+  /* height: 95.5vh; */
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
 
 .map-wrap {

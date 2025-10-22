@@ -29,7 +29,7 @@ function AboutMap() {
       Alternatively, you can upload a GeoJSON Polygon Feature to upload it onto
       the map.
       <br />
-      Then, press <strong>SUBMIT</strong> to compare the site area to check
+      Then, press <strong>Submit</strong> to compare the site area to check
       Cultural Heritage Management Plan trigger boundaries.
       <h4>Rationale</h4>
       The rationale for this component is to separate the proposed TLaWC

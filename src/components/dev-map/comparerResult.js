@@ -81,7 +81,8 @@ function intersectionNotFound() {
 function intersectionError() {
   return (
     <div>
-      <p>Intersection Error</p>
+      <h3>Intersection Error</h3>
+      <p>Please reload the page and try again.</p>
     </div>
   );
 }
