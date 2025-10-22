@@ -1,7 +1,7 @@
 export default async function fillPage3(doc, page, siteData, drawImage) {
 	const { width, height } = page.getSize();
-	const componentPlanPath = '/components/component_plan.png';
-	const componentProfilePath = '/components/component_profile.png';
+	const componentPlanPath = `${process.env.PUBLIC_URL}/components/component_plan.png`;
+	const componentProfilePath = `${process.env.PUBLIC_URL}/components/component_profile.png`;
 
 	// plan
 	await drawImage(doc, page, componentPlanPath, 22.5, 274, width - 46, height - 343.5);

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState, useMemo } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import Panel from "./panel";
 import compare from "./comparer";
@@ -143,9 +143,9 @@ export default function Map() {
 function AddTLaWCBoundary(map) {
   map.on("load", async () => {
     try {
-      const geojsonData = await loadGeoJSON("./dev-map/tlawc_single.geojson");
+      const geojsonData = await loadGeoJSON(`${process.env.PUBLIC_URL}/dev-map/tlawc_boundary.geojson`);
 
-      map.addSource("tlawc_single", {
+      map.addSource("tlawc_boundary", {
         type: "geojson",
         data: geojsonData,
       });
@@ -153,7 +153,7 @@ function AddTLaWCBoundary(map) {
       map.addLayer({
         id: "tlawc",
         type: "line",
-        source: "tlawc_single",
+        source: "tlawc_boundary",
         layout: {},
         paint: {
           "line-color": getComputedStyle(
@@ -172,7 +172,7 @@ function AddCHMPBuffer(map, setLoading) {
   map.on("load", async () => {
     try {
       const geojsonData = await loadGeoJSON(
-        "./dev-map/tlawc_trigger_buffer.geojson"
+        `${process.env.PUBLIC_URL}/dev-map/tlawc_trigger_buffer.geojson`
       );
 
       map.addSource("chmp_buffer", {

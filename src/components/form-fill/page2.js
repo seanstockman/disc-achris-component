@@ -19,8 +19,8 @@ export default async function fillPage2(doc, page, siteData, drawImage) {
     size: 10,
   });
 
-  const treeNorthUrl = "/sketches/tree_north.png";
-  const treeSouthUrl = "/sketches/tree_south.png";
+  const treeNorthUrl = `${process.env.PUBLIC_URL}/sketches/tree_north.png`;
+  const treeSouthUrl = `${process.env.PUBLIC_URL}/sketches/tree_south.png`;
 
   // tree
   await drawImage(doc, page, treeNorthUrl, 28, 420, 270, 288);
@@ -29,7 +29,7 @@ export default async function fillPage2(doc, page, siteData, drawImage) {
 
   //#region Scars
   const scarNoX = width - 250;
-  const scarDrawingUrlPrefix = "/sketches/scar_drawing_";
+  const scarDrawingUrlPrefix = `${process.env.PUBLIC_URL}/sketches/scar_drawing_`;
   const scarDrawingUrlSuffix = ".png";
 
   const scarsImageOffset = 30;

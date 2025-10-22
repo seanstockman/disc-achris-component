@@ -95,7 +95,7 @@ export default function Panel({
           <div>
             <br />
             <img
-              src="/TLaWC-Web-Logo-500px-205px-1.png"
+              src={`${process.env.PUBLIC_URL}/TLaWC-Web-Logo-500px-205px-1.png`}
               alt="Taungurung Land and Water Council Logo"
             ></img>
             <h3>Site CHMP Trigger Map</h3>

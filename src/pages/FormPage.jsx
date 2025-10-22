@@ -24,7 +24,7 @@ function AboutForm() {
 const pageTitle = "VAHR Form Filler";
 
 pdfjsLib.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjsLib.version}/build/pdf.worker.min.js`;
-const existingPdfFilePath = "/ACHRIS Scarred-Tree-VAHR-Form.pdf";
+const existingPdfFilePath = `${process.env.PUBLIC_URL}/ACHRIS Scarred-Tree-VAHR-Form.pdf`;
 
 export default function FormPage() {
   useEffect(() => {
@@ -36,7 +36,7 @@ export default function FormPage() {
 
   async function fetchRandomSiteData() {
     const randomNumber = Math.floor(Math.random() * 10 + 1);
-    const dataPath = `/sample_data/sample${randomNumber}.json`;
+    const dataPath = `${process.env.PUBLIC_URL}/sample_data/sample${randomNumber}.json`;
     console.log("Fetching", dataPath);
     try {
       const response = await fetch(dataPath);
