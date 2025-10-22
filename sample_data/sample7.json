@@ -1,0 +1,54 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "54"
+  },
+  "species": "Other gum",
+  "other-species": "Banksia",
+  "condition": "Removed",
+  "scars": {
+    "number": "1",
+    "toe-hold-count": "2",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.28",
+          "width": "0.01",
+          "height-above-ground": "0.63"
+        },
+        "overgrowth": {
+          "top": "29",
+          "middle-left": "22",
+          "middle-right": "13",
+          "bottom": "0"
+        },
+        "orientation": "90",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Bark removed",
+        "type-other": "Other type",
+        "preservation": "Excellent",
+        "axe-mark": {
+          "count": "2",
+          "method": "Steel",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "Y"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "143",
+    "view-angle-2": "138",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "3.7",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}

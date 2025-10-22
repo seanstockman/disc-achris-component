@@ -1,0 +1,150 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "55"
+  },
+  "species": "Mallee",
+  "other-species": "Banksia",
+  "condition": "Natural deterioration evident",
+  "scars": {
+    "number": "5",
+    "toe-hold-count": "1",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.5",
+          "width": "0.15",
+          "height-above-ground": "0.08"
+        },
+        "overgrowth": {
+          "top": "21",
+          "middle-left": "22",
+          "middle-right": "6",
+          "bottom": "7"
+        },
+        "orientation": "62",
+        "origin": "Definitely Aboriginal",
+        "type": "Bark removed",
+        "type-other": "Other type",
+        "preservation": "Poor",
+        "axe-mark": {
+          "count": "3",
+          "method": "Stone",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "N"
+      },
+      {
+        "geometry": {
+          "length": "0.26",
+          "width": "0.16",
+          "height-above-ground": "0.2"
+        },
+        "overgrowth": {
+          "top": "17",
+          "middle-left": "1",
+          "middle-right": "25",
+          "bottom": "19"
+        },
+        "orientation": "60",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Other",
+        "type-other": "Other type",
+        "preservation": "Destroyed",
+        "axe-mark": {
+          "count": "4",
+          "method": "Steel",
+          "type": "Random"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.16",
+          "width": "0.06",
+          "height-above-ground": "0.39"
+        },
+        "overgrowth": {
+          "top": "14",
+          "middle-left": "18",
+          "middle-right": "0",
+          "bottom": "9"
+        },
+        "orientation": "20",
+        "origin": "Definitely Aboriginal",
+        "type": "Carved tree",
+        "type-other": "Other type",
+        "preservation": "Destroyed",
+        "axe-mark": {
+          "count": "3",
+          "method": "Unidenified origin",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "N"
+      },
+      {
+        "geometry": {
+          "length": "0.31",
+          "width": "0.15",
+          "height-above-ground": "0.98"
+        },
+        "overgrowth": {
+          "top": "29",
+          "middle-left": "4",
+          "middle-right": "23",
+          "bottom": "24"
+        },
+        "orientation": "38",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Destroyed",
+        "axe-mark": {
+          "count": "1",
+          "method": "Stone",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.39",
+          "width": "0.13",
+          "height-above-ground": "0.63"
+        },
+        "overgrowth": {
+          "top": "26",
+          "middle-left": "3",
+          "middle-right": "5",
+          "bottom": "19"
+        },
+        "orientation": "21",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Carved tree",
+        "type-other": "Other type",
+        "preservation": "Destroyed",
+        "axe-mark": {
+          "count": "3",
+          "method": "Unidenified origin",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "N"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "6",
+    "view-angle-2": "48",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "1.6",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}

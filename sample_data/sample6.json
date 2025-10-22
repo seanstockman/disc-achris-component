@@ -1,0 +1,54 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "54"
+  },
+  "species": "Other",
+  "other-species": "Banksia",
+  "condition": "Destroyed",
+  "scars": {
+    "number": "1",
+    "toe-hold-count": "1",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.12",
+          "width": "0.09",
+          "height-above-ground": "0.94"
+        },
+        "overgrowth": {
+          "top": "16",
+          "middle-left": "18",
+          "middle-right": "17",
+          "bottom": "22"
+        },
+        "orientation": "50",
+        "origin": "Definitely Aboriginal",
+        "type": "Carved tree",
+        "type-other": "Other type",
+        "preservation": "Poor",
+        "axe-mark": {
+          "count": "2",
+          "method": "Unidenified origin",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "Y"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "161",
+    "view-angle-2": "343",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "1.9",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}

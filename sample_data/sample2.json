@@ -1,0 +1,102 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "54"
+  },
+  "species": "Casuarina",
+  "other-species": "Banksia",
+  "condition": "Removed",
+  "scars": {
+    "number": "3",
+    "toe-hold-count": "3",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.01",
+          "width": "0.04",
+          "height-above-ground": "0.85"
+        },
+        "overgrowth": {
+          "top": "17",
+          "middle-left": "6",
+          "middle-right": "9",
+          "bottom": "3"
+        },
+        "orientation": "22",
+        "origin": "Highly Likely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "2",
+          "method": "Steel",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "N"
+      },
+      {
+        "geometry": {
+          "length": "0.12",
+          "width": "0.19",
+          "height-above-ground": "0.42"
+        },
+        "overgrowth": {
+          "top": "24",
+          "middle-left": "13",
+          "middle-right": "22",
+          "bottom": "17"
+        },
+        "orientation": "4",
+        "origin": "Definitely Aboriginal",
+        "type": "Other",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "3",
+          "method": "Steel",
+          "type": "Parallel - linear"
+        },
+        "stem-regrowth-present": "N"
+      },
+      {
+        "geometry": {
+          "length": "0.13",
+          "width": "0.19",
+          "height-above-ground": "0.93"
+        },
+        "overgrowth": {
+          "top": "26",
+          "middle-left": "9",
+          "middle-right": "28",
+          "bottom": "9"
+        },
+        "orientation": "38",
+        "origin": "Definitely Aboriginal",
+        "type": "Bark removed",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "2",
+          "method": "Unidenified origin",
+          "type": "Parallel - linear"
+        },
+        "stem-regrowth-present": "Y"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "237",
+    "view-angle-2": "129",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "1.9",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "heritage-register": {
+    "name": "Taungurung Land and Water Council",
+    "number": 30004191
+  },
+  "coordinates": {
+    "easting": 350210,
+    "northing": 5896709,
+    "zone": "54"
+  },
+  "species": "Casuarina",
+  "other-species": "Banksia",
+  "condition": "Destroyed",
+  "scars": {
+    "number": "5",
+    "toe-hold-count": "3",
+    "descriptions": [
+      {
+        "geometry": {
+          "length": "0.43",
+          "width": "0.16",
+          "height-above-ground": "0.03"
+        },
+        "overgrowth": {
+          "top": "24",
+          "middle-left": "15",
+          "middle-right": "18",
+          "bottom": "14"
+        },
+        "orientation": "8",
+        "origin": "Definitely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Fair",
+        "axe-mark": {
+          "count": "4",
+          "method": "Steel",
+          "type": "Criss-cross"
+        },
+        "stem-regrowth-present": "N"
+      },
+      {
+        "geometry": {
+          "length": "0.01",
+          "width": "0.2",
+          "height-above-ground": "0.46"
+        },
+        "overgrowth": {
+          "top": "16",
+          "middle-left": "5",
+          "middle-right": "0",
+          "bottom": "16"
+        },
+        "orientation": "30",
+        "origin": "Definitely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Poor",
+        "axe-mark": {
+          "count": "4",
+          "method": "Stone",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.13",
+          "width": "0.14",
+          "height-above-ground": "0.09"
+        },
+        "overgrowth": {
+          "top": "9",
+          "middle-left": "24",
+          "middle-right": "0",
+          "bottom": "0"
+        },
+        "orientation": "50",
+        "origin": "Definitely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Good",
+        "axe-mark": {
+          "count": "3",
+          "method": "Stone",
+          "type": "Linear - singular"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.25",
+          "width": "0.06",
+          "height-above-ground": "0.79"
+        },
+        "overgrowth": {
+          "top": "16",
+          "middle-left": "7",
+          "middle-right": "4",
+          "bottom": "1"
+        },
+        "orientation": "73",
+        "origin": "Definitely Aboriginal",
+        "type": "Resource extraction",
+        "type-other": "Other type",
+        "preservation": "Good",
+        "axe-mark": {
+          "count": "1",
+          "method": "Stone",
+          "type": "Parallel - curved"
+        },
+        "stem-regrowth-present": "Y"
+      },
+      {
+        "geometry": {
+          "length": "0.14",
+          "width": "0.16",
+          "height-above-ground": "0.78"
+        },
+        "overgrowth": {
+          "top": "22",
+          "middle-left": "2",
+          "middle-right": "29",
+          "bottom": "20"
+        },
+        "orientation": "68",
+        "origin": "Definitely Aboriginal",
+        "type": "Bark removed",
+        "type-other": "Other type",
+        "preservation": "Very poor",
+        "axe-mark": {
+          "count": "4",
+          "method": "Stone",
+          "type": "Random"
+        },
+        "stem-regrowth-present": "Y"
+      }
+    ]
+  },
+  "sketches": {
+    "view-angle-1": "339",
+    "view-angle-2": "43",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  },
+  "components": {
+    "plan-scale": "1000",
+    "profile-depth-height": "3.6",
+    "additional-information": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+  }
+}
