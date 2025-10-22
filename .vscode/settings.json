@@ -3,6 +3,7 @@
         "CHMP",
         "mapbox",
         "maplibre",
-        "maplibregl"
+        "maplibregl",
+        "tlawc"
     ]
 }

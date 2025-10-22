@@ -1,4 +1,4 @@
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, useMemo } from "react";
 
 import Panel from "./panel";
 import compare from "./comparer";
@@ -55,6 +55,7 @@ export default function Map() {
   const [selection, setSelection] = useState(null);
   const [intersectionState, setIntersectionState] = useState("null");
   const [showAbout, setShowAbout] = useState(false);
+  const [loading, setLoading] = useState(false);
   const mapContainer = useRef(null);
   const map = useRef(null);
   const lng = 145.30695475536;
@@ -106,7 +107,11 @@ export default function Map() {
       essential: true,
     });
 
-    compare(feature, setIntersectionState);
+    compare(feature, setIntersectionState, setLoading);
+  };
+
+  const Loading = () => {
+    return <div id="loading">Loading, please wait...</div>;
   };
 
   return (
@@ -115,7 +120,7 @@ export default function Map() {
         <div ref={mapContainer} className="map" />
       </div>
       <Panel
-        onSubmit={() => compare(selection, setIntersectionState)}
+        onSubmit={() => compare(selection, setIntersectionState, setLoading)}
         setUpload={(feature) => {
           SetUpload(feature);
         }}
@@ -127,6 +132,8 @@ export default function Map() {
         intersectionState={intersectionState}
         setIntersectionState={setIntersectionState}
       />
+      {/* <Loading/> */}
+      {loading && <Loading/>}
     </div>
   );
 }
@@ -163,7 +170,7 @@ function AddCHMPBuffer(map) {
   map.on("load", async () => {
     try {
       const geojsonData = await loadGeoJSON(
-        "./dev-map/updated_triggers.geojson"
+        "./dev-map/tlawc_trigger_buffer.geojson"
       );
 
       map.addSource("chmp_buffer", {

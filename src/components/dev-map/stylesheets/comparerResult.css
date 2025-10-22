@@ -1,5 +1,5 @@
 .comparer-result {
-  --comparer-height: 30vh;
+  --comparer-height: 60vh;
   --comparer-width: 40vw;
   position: absolute;
   width: var(--comparer-width);

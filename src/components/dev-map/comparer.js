@@ -1,9 +1,8 @@
 import * as turf from "@turf/turf";
-import { chmpRequired } from "./comparerResult";
 
 let buffer = null;
 
-export default function compare(selection, setIntersectionState) {
+export default async function compare(selection, setIntersectionState, setLoading) {
   if (selection === null) {
     alert(
       "Draw a polygon on the map or upload a GeoJSON file of the site to determine CHMP requirement."
@@ -11,23 +10,24 @@ export default function compare(selection, setIntersectionState) {
     return;
   }
 
-  checkForBufferOverlap(selection, setIntersectionState);
+  await setLoading(true);
+  await new Promise(resolve => setTimeout(resolve, 100)); // wait 0.5s
+  checkForBufferOverlap(selection, setIntersectionState, setLoading);
 }
 
 /**
  * Compares the map to the site
  * @param {*} map
  */
-function checkForBufferOverlap(selection, setIntersectionState) {
+function checkForBufferOverlap(selection, setIntersectionState, setLoading) {
   if (!validateGeometry(selection)) return console.error("No drawn polygon.");
   console.log("Submitted selection:", selection);
-  const status = document.getElementById("intersection-status");
-  // status.innerHTML = "<p><i>Loading...</i></p>";
 
   try {
     const intersection = turf.intersect(
       turf.featureCollection([selection, buffer])
     );
+    setLoading(false);
     if (intersection) {
       console.log("Intersection found.");
       setIntersectionState("yes");
@@ -41,10 +41,6 @@ function checkForBufferOverlap(selection, setIntersectionState) {
     return;
   }
 }
-
-// export function compareToFile(map, siteDefinition) {
-//   const buffer = map.buffer;
-// }
 
 function validateGeometry(feature) {
   console.log(feature);
@@ -70,25 +66,5 @@ function validateGeometry(feature) {
 }
 
 export function setBuffer(inputBuffer) {
-  const validBufferFeatures = inputBuffer.features.filter(validateGeometry);
-
-  if (validBufferFeatures.length === 0) {
-    return console.error("No valid polygons in buffer.");
-  }
-
-  // Start with the first polygon
-  let merged = validBufferFeatures[0];
-
-  for (let i = 1; i < validBufferFeatures.length; i++) {
-    try {
-      merged = turf.union(merged, validBufferFeatures[i]);
-    } catch (error) {
-      continue;
-    }
-  }
-
-  if (!validateGeometry(merged)) console.error("Invalid merged geometry.");
-
-  buffer = merged;
-  console.log("Merged buffer:", buffer);
+  buffer = inputBuffer;
 }

@@ -22,3 +22,16 @@
 .maplibregl-ctrl-bottom-left {
   left: 19.5vw;
 }
+
+#loading {
+  position: absolute;
+  left: 46%;
+  bottom: 48%;
+  font-weight: bolder;
+  font-style: italic;
+  background-color: white;
+  border-radius: 5px;
+  border: solid var(--primary-color) 5px;
+  color: var(--primary-color);
+  padding: 8px 16px 8px 16px;
+}

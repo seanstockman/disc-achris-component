@@ -35,9 +35,9 @@ export default function ComparerResult({
 function intersectionFound() {
   return (
     <div>
-      <p style={{ margin: 0, padding: 0 }}>
+      <p>
         Your site is near a culturally significant site listed by TLaWC. You
-        require a
+        require a {" "}
         <a
           target="_blank"
           rel="noreferrer"
