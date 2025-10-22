@@ -9,7 +9,7 @@ import FormPage from "./pages/FormPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/disc-achris-component">
       <nav>
         <strong>Digital Infrastructure Systems Capstone</strong>
         <div className="gap-left"></div>
