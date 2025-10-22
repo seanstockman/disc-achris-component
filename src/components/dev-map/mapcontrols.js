@@ -8,7 +8,7 @@ MapboxDraw.constants.classes.CONTROL_PREFIX = "maplibregl-ctrl-";
 MapboxDraw.constants.classes.CONTROL_GROUP = "maplibregl-ctrl-group";
 MapboxDraw.constants.classes.ATTRIBUTION = "maplibregl-ctrl-attrib";
 
-export function AddDrawMapbox(map) {
+export function AddDrawMapbox(map, setSelection) {
   // MapboxDraw requires the canvas's class order to have the class
   // "mapboxgl-canvas" first in the list for the key bindings to work
   map.getCanvas().className = "mapboxgl-canvas maplibregl-canvas";
@@ -41,21 +41,27 @@ export function AddDrawMapbox(map) {
 
   map.on("draw.update", update);
   map.on("draw.create", update);
-  map.on("draw.delete", update);
+  map.on("draw.delete", drawDeleteCustom);
+  map.on("draw.add", update);
+
+  function drawDeleteCustom(e) {
+    draw.deleteAll();
+    setSelection(null);
+  }
 
   function update(e) {
     const data = draw.getAll();
-    // const status = document.getElementById("selection-status");
-    if (data.features.length > 0) {
-      // status.innerHTML = `<p>Polygon exists</p>`;
-      if (data.features.length > 1) {
-        const newFeature = data.features[0];
-        draw.deleteAll();
-        draw.add(newFeature);
-      }
-    } else {
-      // status.innerHTML = `<p>No polygon created</p>`;
+    if (data.features.length <= 0) {
+      setSelection(null);
+      return;
     }
+    if (data.features.length > 1) {
+      const newFeature = data.features[0];
+      draw.deleteAll();
+      draw.add(newFeature);
+    }
+    setSelection(draw.getAll().features[0]);
+    // console.log("Setting selection to:", data.features[0]);
   }
 
   return draw;

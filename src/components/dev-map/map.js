@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState } from "react";
 
 import Panel from "./panel";
 import compare from "./comparer";
@@ -8,8 +8,8 @@ import maplibregl from "maplibre-gl";
 import "maplibre-gl/dist/maplibre-gl.css";
 import "./stylesheets/map.css";
 import { AddDrawMapbox } from "./mapControls";
-import { centroid } from "@turf/turf";
 import Popup from "../popup";
+import ComparerResult from "./comparerResult";
 
 function AboutMap() {
   return (
@@ -52,7 +52,9 @@ let mapRef = null;
 let draw = null;
 
 export default function Map() {
-  const [popupVisible, setPopupVisible] = useState(false);
+  const [selection, setSelection] = useState(null);
+  const [intersectionState, setIntersectionState] = useState("null");
+  const [showAbout, setShowAbout] = useState(false);
   const mapContainer = useRef(null);
   const map = useRef(null);
   const lng = 145.30695475536;
@@ -83,11 +85,29 @@ export default function Map() {
 
     map.current.addControl(new maplibregl.NavigationControl(), "bottom-right");
 
-    draw = AddDrawMapbox(map.current);
+    draw = AddDrawMapbox(map.current, setSelection);
 
     AddCHMPBuffer(map.current);
     AddTLaWCBoundary(map.current);
   }, [API_KEY, lng, lat, zoom]);
+
+  const SetUpload = (feature) => {
+    draw.deleteAll();
+    draw.add(feature);
+    setSelection(feature); // Directly set the selection
+
+    // Calculate bounds for the uploaded feature
+    const bounds = feature.geometry.coordinates[0].reduce((bounds, coord) => {
+      return bounds.extend(coord);
+    }, new maplibregl.LngLatBounds(feature.geometry.coordinates[0][0], feature.geometry.coordinates[0][0]));
+
+    mapRef.fitBounds(bounds, {
+      padding: 50,
+      essential: true,
+    });
+
+    compare(feature, setIntersectionState);
+  };
 
   return (
     <div className="page-container">
@@ -95,13 +115,18 @@ export default function Map() {
         <div ref={mapContainer} className="map" />
       </div>
       <Panel
-        onSubmit={() => compare(draw)}
-        setUpload={SetUploaded}
-        setPopupVisible={setPopupVisible}
+        onSubmit={() => compare(selection, setIntersectionState)}
+        setUpload={(feature) => {
+          SetUpload(feature);
+        }}
+        setPopupVisible={setShowAbout}
+        selection={selection}
       />
-      {popupVisible && (
-        <Popup About={AboutMap} setPopupVisible={setPopupVisible} />
-      )}
+      {showAbout && <Popup About={AboutMap} setPopupVisible={setShowAbout} />}
+      <ComparerResult
+        intersectionState={intersectionState}
+        setIntersectionState={setIntersectionState}
+      />
     </div>
   );
 }
@@ -137,7 +162,9 @@ function AddTLaWCBoundary(map) {
 function AddCHMPBuffer(map) {
   map.on("load", async () => {
     try {
-      const geojsonData = await loadGeoJSON("./dev-map/sample_buffer.geojson");
+      const geojsonData = await loadGeoJSON(
+        "./dev-map/updated_triggers.geojson"
+      );
 
       map.addSource("chmp_buffer", {
         type: "geojson",
@@ -159,17 +186,5 @@ function AddCHMPBuffer(map) {
     } catch (error) {
       console.error("Error loading or adding GeoJSON source:", error);
     }
-  });
-}
-
-function SetUploaded(feature) {
-  draw.deleteAll();
-  draw.add(feature);
-  document.getElementById("file-upload-status").innerHTML = `Feature uploaded.`;
-  const featureCentre = centroid(feature);
-  mapRef.flyTo({
-    center: featureCentre.geometry.coordinates,
-    zoom: 15,
-    essential: true, // this animation is considered essential with respect to prefers-reduced-motion
   });
 }

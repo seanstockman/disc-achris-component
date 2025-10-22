@@ -1,0 +1,60 @@
+.comparer-result {
+  --comparer-height: 30vh;
+  --comparer-width: 40vw;
+  position: absolute;
+  width: var(--comparer-width);
+  height: var(--comparer-height);
+  left: calc(50% - var(--comparer-width) / 2);
+  bottom: calc(50% - var(--comparer-height) / 2);
+  transition-duration: 0.5s;
+  pointer-events: none;
+  opacity: 0;
+
+  background-color: white;
+  border-style: solid;
+  border-width: 5px;
+  border-color: var(--primary-color);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.comparer-result > div > p {
+  margin-left: 4vw;
+  margin-right: 4vw;
+}
+
+.comparer-result > div > h3 {
+  margin-top: 0;
+}
+
+.comparer-result > button {
+  align-self: flex-end;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin: 10px;
+  background-color: white;
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  border-width: 5px;
+  transition-duration: 0.5s;
+  font-size: x-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+.comparer-result > button > p {
+  margin: 0;
+}
+
+.comparer-result > button:hover {
+  cursor: pointer;
+  background-color: rgb(255, 241, 211);
+  /* transform: rotate(180deg); */
+  border-color: brown;
+  color: brown;
+}

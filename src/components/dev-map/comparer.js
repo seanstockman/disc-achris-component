@@ -3,24 +3,26 @@ import { chmpRequired } from "./comparerResult";
 
 let buffer = null;
 
-export default function compare(draw) {
-  if (draw.getAll().features.length > 0) {
-    checkForBufferOverlap(draw.getAll().features[0]);
+export default function compare(selection, setIntersectionState) {
+  if (selection === null) {
+    alert(
+      "Draw a polygon on the map or upload a GeoJSON file of the site to determine CHMP requirement."
+    );
     return;
   }
 
-	alert("Draw a polygon on the map or upload a GeoJSON file of the site to determine CHMP requirement.");
-	return;
+  checkForBufferOverlap(selection, setIntersectionState);
 }
 
 /**
  * Compares the map to the site
  * @param {*} map
  */
-function checkForBufferOverlap(selection) {
+function checkForBufferOverlap(selection, setIntersectionState) {
   if (!validateGeometry(selection)) return console.error("No drawn polygon.");
-  console.log(selection);
+  console.log("Submitted selection:", selection);
   const status = document.getElementById("intersection-status");
+  // status.innerHTML = "<p><i>Loading...</i></p>";
 
   try {
     const intersection = turf.intersect(
@@ -28,18 +30,16 @@ function checkForBufferOverlap(selection) {
     );
     if (intersection) {
       console.log("Intersection found.");
-      // status.innerHTML = `<p style="margin:0; padding:0;">Your site is near a culturally significant site listed by TLaWC. You require a <a target="_blank" href="https://www.firstpeoplesrelations.vic.gov.au/cultural-heritage-management-plans" style="margin:0; padding:0;">Cultural Heritage Management Plan</a>.</p>`;
-      status.innerHTML = chmpRequired();
-
-      return;
+      setIntersectionState("yes");
+    } else {
+      setIntersectionState("no");
+      console.log("No intersection found.");
     }
   } catch (err) {
     console.error("Intersection failed:", err);
+    setIntersectionState("fail");
     return;
   }
-
-  console.log("No intersection found.");
-  status.innerHTML = `<p>Your site is not near a culturally significant site listed by TLaWC.</p>`;
 }
 
 // export function compareToFile(map, siteDefinition) {
@@ -47,6 +47,7 @@ function checkForBufferOverlap(selection) {
 // }
 
 function validateGeometry(feature) {
+  console.log(feature);
   if (!feature) return false;
   const geom = feature.geometry;
   if (!geom) return false;
@@ -79,10 +80,10 @@ export function setBuffer(inputBuffer) {
   let merged = validBufferFeatures[0];
 
   for (let i = 1; i < validBufferFeatures.length; i++) {
-    merged = turf.union(merged, validBufferFeatures[i]);
-    if (!merged) {
-      console.error("Failed to union polygons:", i);
-      return;
+    try {
+      merged = turf.union(merged, validBufferFeatures[i]);
+    } catch (error) {
+      continue;
     }
   }
 

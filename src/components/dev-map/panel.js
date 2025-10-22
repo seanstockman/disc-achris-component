@@ -1,8 +1,8 @@
-import { hover } from "@testing-library/user-event/dist/hover";
 import "./stylesheets/panel.css";
 import { union } from "@turf/turf";
+import { useMemo } from "react";
 
-export default function Panel({ onSubmit, setUpload, setPopupVisible }) {
+export default function Panel({ onSubmit, setUpload, setPopupVisible, selection }) {
   const onInput = async (e) => {
     const input = document.getElementById("area-input");
     const file = e.target.files[0];
@@ -27,7 +27,7 @@ export default function Panel({ onSubmit, setUpload, setPopupVisible }) {
           if (!merged) {
             console.error("Failed to union polygons:", i);
             alert(
-              "Failed to polygonise FeatureCollection. Please upload a Polygon or MultiPolygon Feature instead."
+              "Failed to read FeatureCollection. Please try uploading a Polygon or MultiPolygon Feature instead."
             );
             return;
           }
@@ -50,9 +50,7 @@ export default function Panel({ onSubmit, setUpload, setPopupVisible }) {
         return;
       }
 
-      if (geojson.geometry.type === "MultiPolygon") {
-        geojson = geojson.features[0];
-      }
+      // MultiPolygon features are already handled
 
       setUpload(geojson);
     } catch (err) {
@@ -61,19 +59,43 @@ export default function Panel({ onSubmit, setUpload, setPopupVisible }) {
     }
   };
 
+  const submitButtonContent = useMemo(() => {
+    // console.log("Panel selection state:", selection);
+    if (!selection) return null;
+    
+    return (
+      <div>
+        <input
+            onClick={onSubmit}
+            type="submit"
+            id="fileSubmit"
+            className="hidden-file-input"
+          ></input>
+          <div className="file-input">
+            <label htmlFor="fileSubmit">Submit</label>
+          </div>
+          <div id="intersection-status">
+            <p>
+              Press <strong>SUBMIT</strong> to test your site area.
+            </p>
+          </div>
+      </div>
+    );
+  }, [selection, onSubmit]);
+
   return (
     <div className="left-panel-holder">
       <div className="left-panel">
         <div className="panel-contents">
+          <br/>
           <img
-            src="/tlawc-logo.jpg"
+            src="/TLaWC-Web-Logo-500px-205px-1.png"
             alt="Taungurung Land and Water Council Logo"
           ></img>
-          <h3>Developer CHMP Trigger Map</h3>
-          <p>
-            Draw a polygon using the draw tools on the right, or upload a
-            shapefile of your site footprint.
-          </p>
+          <h3>Site CHMP Trigger Map</h3>
+          <div className="horizontal-line"></div>
+          <p><strong>Draw a polygon using the draw tools on the right</strong></p>
+          <p className="br-or">or</p>
           <div className="file-upload-wrapper">
             <input
               type="file"
@@ -82,34 +104,15 @@ export default function Panel({ onSubmit, setUpload, setPopupVisible }) {
               onChange={onInput}
             ></input>
             <div className="file-input">
-              <label for="area-input">CHOOSE GEOJSON FEATURE</label>
+              <label htmlFor="area-input">Upload Site GeoJSON</label>
             </div>
             <br />
-            <span id="file-upload-status" className="selected-file-name">
-              No file chosen.
-            </span>
           </div>
-          <input
-            onClick={onSubmit}
-            type="submit"
-            id="fileSubmit"
-            className="hidden-file-input"
-          ></input>
-          <div className="file-input">
-            <label for="fileSubmit">SUBMIT</label>
-          </div>
-          {/* <div id="selection-status">
-            <p>No polygon created</p>
-          </div> */}
-          <div id="intersection-status">
-            <p>
-              Press <strong>SUBMIT</strong> to test your site area.
-            </p>
-          </div>
+          {submitButtonContent}
           <button
             className="file-input"
             onClick={() => setPopupVisible(true)}
-            id = "about-button"
+            id="about-button"
           >
             <strong>About</strong>
           </button>

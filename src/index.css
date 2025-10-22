@@ -14,8 +14,9 @@ code {
 
 :root {
   --primary-color: #d27246; /* TLaWC Orange */
-  --secondary-color: #ffffff; /* White */
-  --success-color: #28a745; /* Green */
-  --text-color: #333; /* Dark gray */
-  --light-bg-color: #ffffff; /* White */
+  --secondary-color: #6AA6A0;
+  --third-color: #5AE6D7;
+  --success-color: #28a745;
+  --text-color: #3C312C;
+  --light-bg-color: #ffffff;
 }
