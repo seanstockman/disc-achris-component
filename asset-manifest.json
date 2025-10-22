@@ -1,16 +1,15 @@
 {
   "files": {
     "main.css": "/disc-achris-component/static/css/main.2144a876.css",
-    "main.js": "/disc-achris-component/static/js/main.b0b94503.js",
+    "main.js": "/disc-achris-component/static/js/main.414a99c0.js",
     "static/js/453.ec5a8ada.chunk.js": "/disc-achris-component/static/js/453.ec5a8ada.chunk.js",
-    "static/media/logo.svg": "/disc-achris-component/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/disc-achris-component/index.html",
     "main.2144a876.css.map": "/disc-achris-component/static/css/main.2144a876.css.map",
-    "main.b0b94503.js.map": "/disc-achris-component/static/js/main.b0b94503.js.map",
+    "main.414a99c0.js.map": "/disc-achris-component/static/js/main.414a99c0.js.map",
     "453.ec5a8ada.chunk.js.map": "/disc-achris-component/static/js/453.ec5a8ada.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.2144a876.css",
-    "static/js/main.b0b94503.js"
+    "static/js/main.414a99c0.js"
   ]
 }
