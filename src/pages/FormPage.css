@@ -22,12 +22,14 @@
     left:1vw;
     top:7vh;
     border-radius: 8px;
-    border-width: 1px;
-    background-color: rgb(253, 255, 204);
+    border-width: 4px;
+    border-color: var(--primary-color);
+    border-style: outset;
+    background-color: rgb(255, 255, 255);
     transition-duration: 0.5s;
 }
 
 #about-button-form:hover {
     cursor: pointer;
-    background-color: rgb(255, 222, 89);
+    background-color: rgb(255, 242, 224);
 }

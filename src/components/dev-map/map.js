@@ -69,6 +69,8 @@ export default function Map() {
       return;
     }
 
+    setLoading(true);
+
     const bounds = [
       [143.18052716189982, -37.809150075981044],
       [147.2390058715678, -36.2606270578016],
@@ -88,7 +90,7 @@ export default function Map() {
 
     draw = AddDrawMapbox(map.current, setSelection);
 
-    AddCHMPBuffer(map.current);
+    AddCHMPBuffer(map.current, setLoading);
     AddTLaWCBoundary(map.current);
   }, [API_KEY, lng, lat, zoom]);
 
@@ -166,7 +168,7 @@ function AddTLaWCBoundary(map) {
   });
 }
 
-function AddCHMPBuffer(map) {
+function AddCHMPBuffer(map, setLoading) {
   map.on("load", async () => {
     try {
       const geojsonData = await loadGeoJSON(
@@ -192,6 +194,9 @@ function AddCHMPBuffer(map) {
       setBuffer(geojsonData);
     } catch (error) {
       console.error("Error loading or adding GeoJSON source:", error);
+    } finally {
+      await new Promise(resolve => setTimeout(resolve, 1500)); // wait 0.5s
+      setLoading(false);
     }
   });
 }
